@@ -8,8 +8,8 @@
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
 </head>
 <body>
-	<h1>Lista de livros</h1><br>
-	<table class="table tabel-bordered table-striped">
+	<h1 style="color:blue;text-align:center;">Lista de Livros</h1><br><br>
+	<table class="table tabel-bordered table-striped text-center">
 		<thead >
 			<tr>
 				<th scope="col">#</th>
@@ -28,7 +28,7 @@
 					<th>{{ $livro->isbn }}</th>
 					<th>{{ $livro->nome }}</th>
 					<th>{{ $livro->autor }}</th>
-					<th>{{ $livro->preco }}</th>
+					<th>{{ number_format($livro->preco, 2, ',', '.') }}</th>
 					<th>
 						<a class="btn btn-primary" href="{{ route('editar',['id'=>$livro->id]) }}" role="button">Editar</a>
 						<a class="btn btn-danger" href="{{ route('deletar', ['id'=>$livro->id]) }}" role="button">Excluir</a>

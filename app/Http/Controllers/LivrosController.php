@@ -34,7 +34,8 @@ class LivrosController extends Controller
 
     	$livro->save();
 
-		return view('livros.todos');
+		#return view('livros.todos');
+        return redirect('/livros/ver');
 		#return redirect()->route('todos');
     	#return "Livro salvo com sucesso";
     }

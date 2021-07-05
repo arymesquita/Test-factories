@@ -34,7 +34,7 @@
 
 			<div class="form-group">
 			<label for="preco">Preço</label>
-			<input type="text" class="form-control" id="preco" name="preco" value="{{$livro->preco}}" placeholder="preco">
+			<input type="text" class="form-control" id="preco" name="preco" value="{{number_format($livro->preco, 2, ',', '.')}}" placeholder="preco">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Editar</button>

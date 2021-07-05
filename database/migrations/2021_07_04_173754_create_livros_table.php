@@ -18,7 +18,7 @@ class CreateLivrosTable extends Migration
             $table->string('isbn');
             $table->string('nome');
             $table->string('autor');
-            $table->string('preco');
+            $table->double('preco',10,2);
             $table->timestamps();
         });
     }
