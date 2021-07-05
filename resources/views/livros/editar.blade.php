@@ -13,27 +13,28 @@
 
 <div class="container-fluid h-100 bg-light text-dark">
   <div class="row justify-content-center align-items-center">
-
-		<form action="" method="POST" role="form" >
+  		
+		<form action="{{ route('atualizar',['id' => $livro->id]) }}" method="post" role="form" >
+		@csrf
 
 			<div class="form-group">
-			<label for="isbn"></label>
-			<input type="text" class="form-control" id="isbn" placeholder="isbn">
+			<label for="isbn">ISBN</label>
+			<input type="text" class="form-control" id="isbn" name="isbn" value="{{$livro->isbn}}" placeholder="isbn">
 			</div>
 
 			<div class="form-group">
-			<label for="nome"></label>
-			<input type="text" class="form-control" id="nome" placeholder="nome">
+			<label for="nome">Nome</label>
+			<input type="text" class="form-control" id="nome" name="nome" value="{{$livro->nome}}" placeholder="nome">
 			</div>
 
 			<div class="form-group">
-			<label for="autor"></label>
-			<input type="text" class="form-control" id="autor" placeholder="autor">
+			<label for="autor">Autor</label>
+			<input type="text" class="form-control" id="autor" name="autor" value="{{$livro->autor}}" placeholder="autor">
 			</div>
 
 			<div class="form-group">
-			<label for="preco"></label>
-			<input type="text" class="form-control" id="preco" placeholder="preco">
+			<label for="preco">Preço</label>
+			<input type="text" class="form-control" id="preco" name="preco" value="{{$livro->preco}}" placeholder="preco">
 			</div>
 
 			<button type="submit" class="btn btn-primary">Editar</button>

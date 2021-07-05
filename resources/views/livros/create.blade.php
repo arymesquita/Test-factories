@@ -14,8 +14,8 @@
 <div class="container-fluid h-100 bg-light text-dark">
   <div class="row justify-content-center align-items-center">
 
-		<form action="" method="post" role="form" >
-		
+		<form action="{{ route('store') }}" method="post" role="form" >
+		 	@csrf
 
 			<div class="form-group">
 			<label for="isbn">ISBN</label>

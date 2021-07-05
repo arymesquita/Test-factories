@@ -22,21 +22,24 @@
 			</tr>
 		</thead>
 		<tbody>
-			<tr>
-				<th scope="row">1</th>
-				<th>123</th>
-				<th>Nome do livro</th>
-				<th>Autor do livro</th>
-				<th>R$90,00</th>
-				<th>
-					<a class="btn btn-primary" href="/livros/edit" role="button">Editar</a>
-					<a class="btn btn-danger" href="#" role="button">Excluir</a>
-					<a class="btn btn-success" href="/livros/create" role="button">Novo</a>
+			@foreach($livros as $livro)
+				<tr>
+					<th scope="row">{{ $livro->id }}</th>
+					<th>{{ $livro->isbn }}</th>
+					<th>{{ $livro->nome }}</th>
+					<th>{{ $livro->autor }}</th>
+					<th>{{ $livro->preco }}</th>
+					<th>
+						<a class="btn btn-primary" href="{{ route('editar',['id'=>$livro->id]) }}" role="button">Editar</a>
+						<a class="btn btn-danger" href="{{ route('deletar', ['id'=>$livro->id]) }}" role="button">Excluir</a>
+						<a class="btn btn-success" href="{{ route('criar') }}" role="button">Novo</a>
 
-				</th>
+					</th>
 
 
-			</tr>
+
+				</tr>
+			@endforeach
 		</tbody>
 		
 	</table>

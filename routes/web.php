@@ -15,11 +15,22 @@ use App\Http\Controllers\LivrosController;
 |
 */
 
-Route::get('/livros',[LivrosController::class,'show']);
+Route::get('/livros/ver',[LivrosController::class,'show']);
 
-Route::get('/livros/create',[LivrosController::class,'create']);
+Route::get('/livro/editar/{id}',[LivrosController::class,'edit'])->name('editar');
+Route::post('/livro/editar/{id}',[LivrosController::class,'update'])->name('atualizar');
 
-Route::get('/livros/edit',[LivrosController::class,'edit']);
+Route::get('livro/deletar/{id}',[LivrosController::class,'destroy'])->name('deletar');
+
+
+
+Route::get('/livro/novo',[LivrosController::class,'create'])->name('criar');
+
+Route::post('/livro/novo', [LivrosController::class,'store'])->name('store');
+
+
+
+
 
 
 
